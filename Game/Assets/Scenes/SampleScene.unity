@@ -2062,6 +2062,8 @@ MonoBehaviour:
   look: {x: 0, y: 0}
   jump: 0
   sprint: 0
+  isAiming: 0
+  isSlashing: 0
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1

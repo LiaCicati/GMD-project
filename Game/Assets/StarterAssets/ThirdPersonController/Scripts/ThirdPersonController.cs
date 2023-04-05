@@ -159,6 +159,21 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            AimSword();
+        }
+
+        private void AimSword()
+        {
+            if (_input.isAiming && Grounded && !_input.sprint)
+            {
+                _animator.SetBool("Aiming", _input.isAiming);
+                _animator.SetBool("Slashing", _input.isSlashing);
+            }
+            else
+            {
+                _animator.SetBool("Aiming", false);
+                _animator.SetBool("Slashing", false);
+            }
         }
 
         private void LateUpdate()
