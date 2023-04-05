@@ -52,8 +52,8 @@
                 },
                 {
                     "name": "Slashing",
-                    "type": "Value",
-                    "id": "fc93b9ee-5c4a-4dcf-b249-474a07bca648",
+                    "type": "PassThrough",
+                    "id": "58245e7d-9cb3-4154-84ae-985a15e794d4",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -239,23 +239,23 @@
                 },
                 {
                     "name": "",
-                    "id": "de350fe6-b36f-4232-8ba0-117e4045bf03",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Slashing",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "7986f5bd-dfe2-41e1-88b5-3f3de5c2444e",
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Aiming",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa59615f-a326-44c5-8a03-a13cbd55f743",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slashing",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

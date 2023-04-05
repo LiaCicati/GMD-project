@@ -49,11 +49,13 @@ namespace StarterAssets
 	    public void OnAiming(InputValue value)
 		{
 			isAiming= value.isPressed;
+ Debug.Log("isAiming: " + isAiming);
 		}
 
-        public void onSlashing(InputValue value)
+        public void OnSlashing(InputValue value)
 		{
-			isSlashing = value.isPressed;
+			isSlashing= value.isPressed;
+    Debug.Log("isSlashing: " + isSlashing);
 		}
 #endif
 
