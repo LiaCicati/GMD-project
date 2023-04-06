@@ -46,17 +46,19 @@ namespace StarterAssets
 			SprintInput(value.isPressed);
 		}
 
-	    public void OnAiming(InputValue value)
-		{
-			isAiming= value.isPressed;
- Debug.Log("isAiming: " + isAiming);
-		}
+	    public void OnAiming(InputValue value) 
+        {
+	      isAiming = value.isPressed;
 
-        public void OnSlashing(InputValue value)
-		{
-			isSlashing= value.isPressed;
-    Debug.Log("isSlashing: " + isSlashing);
-		}
+	      Debug.Log("isAiming: " + isAiming);
+	    }
+
+	    public void OnSlashing(InputValue value) 
+        {
+	      isSlashing = value.isPressed;
+
+	      Debug.Log("isSlashing: " + isSlashing);
+	    }
 #endif
 
 
