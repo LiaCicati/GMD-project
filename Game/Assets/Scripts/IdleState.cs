@@ -18,10 +18,9 @@ public class IdleState : BaseState
         {
             animator.SetBool("isPatrolling", true);
         }
-
-       // if (GetDistanceFromPlayer(animator.transform) < chaseRange)
-        //{
-       //     animator.SetBool("isChasing", true);
-       // }
+        if (GetDistanceFromPlayer(animator.transform) < chaseRange)
+        {
+           animator.SetBool("isChasing", true);
+        }
     }
 }

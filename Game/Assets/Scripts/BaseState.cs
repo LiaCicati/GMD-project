@@ -15,4 +15,9 @@ public abstract class BaseState : StateMachineBehaviour
     {
         // Implement any code to run when the state is exited
     }
+    
+    protected float GetDistanceFromPlayer(Transform transform)
+    {
+        return Vector3.Distance(player.position, transform.position);
+    }
 }

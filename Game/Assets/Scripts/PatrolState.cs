@@ -10,6 +10,7 @@ public class PatrolState : BaseState
     
     private float patrolSpeed = 1.5f;
     private float patrolTimerLimit = 10f;
+    private float chaseRange = 8f;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
@@ -40,6 +41,10 @@ public class PatrolState : BaseState
         if (_timer > patrolTimerLimit)
         {
             animator.SetBool("isPatrolling", false);
+        }
+        if (GetDistanceFromPlayer(animator.transform) < chaseRange)
+        {
+            animator.SetBool("isChasing", true);
         }
     }
 
