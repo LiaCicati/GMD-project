@@ -109,6 +109,8 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
+        public GameObject swordObject;
+        public Transform swordPoint;
 
         private bool IsCurrentDeviceMouse
         {
@@ -168,7 +170,7 @@ namespace StarterAssets
             if (_input.isAiming && Grounded && !_input.sprint)
             {
                 _animator.SetBool("Aiming", true);
-                Debug.Log("Aiming: " + _input.isAiming);
+               // Debug.Log("Aiming: " + _input.isAiming);
             }
             else
             {
@@ -178,10 +180,12 @@ namespace StarterAssets
 
         private void Slash()
         {
+            GameObject sword = Instantiate(swordObject, swordPoint.position, transform.rotation);
+            sword.GetComponent<Rigidbody>().AddForce(transform.forward * 25f, ForceMode.Impulse);
             if (_input.isSlashing && Grounded && !_input.sprint)
             {
                 _animator.SetBool("Slash", true);
-                Debug.Log("Slashing: " + _input.isSlashing);
+                //Debug.Log("Slashing: " + _input.isSlashing);
             }
             else
             {
