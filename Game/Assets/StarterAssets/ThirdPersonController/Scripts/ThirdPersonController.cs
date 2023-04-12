@@ -110,6 +110,11 @@ namespace StarterAssets
 
         private bool _hasAnimator;
 
+       // public GameObject bulletObject;
+        public ObjectPool objectPool;
+        public Transform bulletPoint;
+        private const float bulletSpeed = 25f;
+
         private bool IsCurrentDeviceMouse
         {
             get
@@ -159,6 +164,28 @@ namespace StarterAssets
             JumpAndGravity();
             GroundedCheck();
             Move();
+            Shooting();
+        }
+
+        private void Shooting()
+        {
+            if (_input.isShooting && Grounded && !_input.sprint)
+            {
+                _animator.SetBool("Shooting", _input.isShooting);
+            }
+            else
+            {
+                _animator.SetBool("Shooting", false);
+            }
+        }
+
+        public void Shoot()
+        { 
+            GameObject bullet = objectPool.GetObjectFromPool();
+           bullet.transform.position = bulletPoint.position;
+           bullet.transform.rotation = transform.rotation;
+           bullet.SetActive(true);
+           bullet.GetComponent<Rigidbody>().AddForce(transform.forward * bulletSpeed, ForceMode.Impulse);
         }
 
         private void LateUpdate()
