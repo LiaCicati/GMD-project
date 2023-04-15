@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int damageAmount = 20;
     void Start()
     {
     }
+    
     private void OnTriggerEnter(Collider other)
     {
+        //Destroy(transform.GetComponent<Rigidbody>());
+        if (other.tag == "Enemy")
+        {
+            Debug.Log("Bullet hit enemy: " + other.name);
+            transform.parent = other.transform;
+            other.GetComponent<Enemy>().TakeDamage(damageAmount);
 
+        }
     }
-    
+
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

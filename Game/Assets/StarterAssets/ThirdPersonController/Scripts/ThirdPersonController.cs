@@ -109,8 +109,7 @@ namespace StarterAssets
         private const float _threshold = 0.01f;
 
         private bool _hasAnimator;
-
-       // public GameObject bulletObject;
+        
         public ObjectPool objectPool;
         public Transform bulletPoint;
         private const float bulletSpeed = 25f;
