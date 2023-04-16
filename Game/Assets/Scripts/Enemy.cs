@@ -2,18 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
     // HP = Hit points - amount of damage that an object can sustain before it is destroyed or defeated
     public int HP = 60;
     public Animator animator;
+    public HealthBar healthBar;
+
+    private void Start()
+    {
+        healthBar.SetMaxHealth(HP);
+    }
 
     public void TakeDamage(int damageAmount)
     {
-        Debug.Log("INITIAL"+HP);
-        Debug.Log("Enemy taking damage: " + damageAmount + " HP = " + HP);
         HP -= damageAmount;
+        healthBar.SetHealth(HP);
         if (HP <= 0)
         {
             Die();
