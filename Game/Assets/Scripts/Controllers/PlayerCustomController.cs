@@ -25,6 +25,8 @@ public class PlayerCustomController : MonoBehaviour
         // Play death animation here
         animator.SetTrigger("die");
         GameState.isGameOver = true;
+       RestartGame restartGame =  FindObjectOfType<RestartGame>();
+       restartGame.EndGame();
 
     } 
     
