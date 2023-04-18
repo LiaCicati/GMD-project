@@ -11679,6 +11679,7 @@ MonoBehaviour:
   HP: 60
   animator: {fileID: 1407557755}
   healthBar: {fileID: 1179419510}
+  armCollider: {fileID: 362811343}
 --- !u!4 &1407557759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4168634819871070, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
