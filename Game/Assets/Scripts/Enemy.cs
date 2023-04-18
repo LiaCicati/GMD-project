@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using StarterAssets;
+using UnityEditor.Build.Content;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
@@ -10,6 +13,7 @@ public class Enemy : MonoBehaviour
     public int HP = 60;
     public Animator animator;
     public HealthBar healthBar;
+    public Collider armCollider;
 
     private void Start()
     {
@@ -29,7 +33,7 @@ public class Enemy : MonoBehaviour
             GetHit();
         }
     }
-    
+
     private void Die()
     {
         // Play Death Animation
@@ -37,6 +41,8 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("die");
         GetComponent<Collider>().enabled = false;
         enabled = false;
+        // Disable the extra collider on the enemy arm
+        armCollider.gameObject.SetActive(false);
     }
 
     private void GetHit()
