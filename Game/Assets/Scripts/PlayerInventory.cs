@@ -1,13 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerInventory : MonoBehaviour
 {
- public int NumberOfDiamonds { get; private set; }
+    // Event to be invoked when a diamond is collected
+    public UnityEvent<PlayerInventory> onDiamondCollected;
 
- public void DiamondCollected()
- {
-  NumberOfDiamonds++;
- }
+    // Property to get the number of collected diamonds
+    public int NumberOfDiamonds { get; private set; }
+
+    // Method called when a diamond is collected
+    public void DiamondCollected()
+    {
+        NumberOfDiamonds++;
+        onDiamondCollected.Invoke(this);
+    }
 }
