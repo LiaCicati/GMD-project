@@ -16001,6 +16001,7 @@ GameObject:
   - component: {fileID: 4000010043812026}
   - component: {fileID: 95000011159147032}
   - component: {fileID: -5949585953601484213}
+  - component: {fileID: -4380503603411740382}
   m_Layer: 0
   m_Name: BoxOfPandora
   m_TagString: Untagged
@@ -16059,6 +16060,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.89342946, y: 0.8855618, z: 0.82407206}
   m_Center: {x: -0.00004658095, y: 0.4274547, z: 0.017423064}
+--- !u!114 &-4380503603411740382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000014038691284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6398651d463f30d4ebde3fc2f01d50f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1000014199803242
 GameObject:
   m_ObjectHideFlags: 0
