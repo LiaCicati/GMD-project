@@ -10,6 +10,9 @@ public class PandoraBox: MonoBehaviour {
 
             // Destroy the Pandora Box
             Destroy(gameObject);
+            
+            // Set the game state to indicate that the game has been won
+            GameState.isGameWon = true;
         }
     }
 }
