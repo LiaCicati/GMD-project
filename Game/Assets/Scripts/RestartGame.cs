@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +6,8 @@ public class RestartGame : MonoBehaviour
     public KeyCode restartKey = KeyCode.R; // Key to press to restart the game
 
     public bool gameEnded ; // Check if the game has ended
+
+    public bool gameWon; // Check if the game has been won
 
     private void OnEnable()
     {
@@ -20,7 +21,7 @@ public class RestartGame : MonoBehaviour
 
     private void Update()
     {
-        if (gameEnded && Input.GetKeyDown(restartKey))
+        if ((gameEnded || gameWon) && Input.GetKeyDown(restartKey))
         {
             Debug.Log("Restarting game...");
             Restart();
@@ -33,6 +34,12 @@ public class RestartGame : MonoBehaviour
         gameEnded = true;
     }
 
+    public void WinGame()
+    {
+        Debug.Log("Game won");
+        gameWon = true;
+    }
+
     private void Restart()
     {
         Debug.Log("Reloading scene...");
@@ -43,6 +50,7 @@ public class RestartGame : MonoBehaviour
     {
         Debug.Log("Resetting game:");
         gameEnded = false;
+        gameWon = false;
         Time.timeScale = 1;
         // Reset other game state here
     }

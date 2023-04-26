@@ -13,6 +13,8 @@ public class PandoraBox: MonoBehaviour {
             
             // Set the game state to indicate that the game has been won
             GameState.isGameWon = true;
+            RestartGame restartGame =  FindObjectOfType<RestartGame>();
+            restartGame.EndGame();
         }
     }
 }
