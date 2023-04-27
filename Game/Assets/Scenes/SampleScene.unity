@@ -16036,6 +16036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1780719422}
   - component: {fileID: 1780719421}
+  - component: {fileID: 1780719423}
   m_Layer: 0
   m_Name: MiniMapCamera
   m_TagString: Untagged
@@ -16070,7 +16071,7 @@ Camera:
   far clip plane: 500
   field of view: 40
   orthographic: 1
-  orthographic size: 15
+  orthographic size: 5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -16102,6 +16103,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!114 &1780719423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1780719420}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bf19c4887c3697479a5f7b7be21dea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7430185194150207777}
 --- !u!1 &1784523891
 GameObject:
   m_ObjectHideFlags: 0
