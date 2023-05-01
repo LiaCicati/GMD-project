@@ -2,11 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
 {
     // TextMeshProUGUI component to display the number of diamonds
-    private TextMeshProUGUI diamondText;
+    [SerializeField] private TextMeshProUGUI diamondText;
+
+    // The diamond image GameObject
+    [SerializeField] private GameObject diamondImage;
+
+    // The sprite to change to after collecting 5 diamonds
+    [SerializeField] private Sprite newSprite;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,20 +24,18 @@ public class InventoryUI : MonoBehaviour
     }
 
     public void UpdateDiamondText(PlayerInventory playerInventory) {
-      // Clamp the number of collected diamonds between 0 and the total number of diamonds needed
-      int numCollected = Mathf.Clamp(playerInventory.NumberOfDiamonds, 0, playerInventory.diamondsNeededForPandoraBox);
+        // Clamp the number of collected diamonds between 0 and the total number of diamonds needed
+        int numCollected = Mathf.Clamp(playerInventory.NumberOfDiamonds, 0, playerInventory.diamondsNeededForPandoraBox);
 
-      // Set the diamond text to show how many diamonds the player has collected out of the total diamonds needed
-      diamondText.text = numCollected.ToString() + "/" + playerInventory.diamondsNeededForPandoraBox.ToString();
+        // Set the diamond text to show how many diamonds the player has collected out of the total diamonds needed
+        diamondText.text = numCollected.ToString() + "/" + playerInventory.diamondsNeededForPandoraBox.ToString();
 
-      // Check if the player has collected all the required diamonds
-      if (numCollected == playerInventory.diamondsNeededForPandoraBox) {
-        // Set the font
-        diamondText.fontSize = 30;
+        // Check if the player has collected all the required diamonds
+        if (numCollected == playerInventory.diamondsNeededForPandoraBox) {
+            // Change the diamond image sprite
+            diamondImage.GetComponent<Image>().sprite = newSprite;
+            diamondText.text = "0/1";
 
-        // Change the text to prompt the player to find the Pandora Box
-        diamondText.text = "Find the Pandora Box!";
-
-      }
-}
+        } 
+    }
 }
