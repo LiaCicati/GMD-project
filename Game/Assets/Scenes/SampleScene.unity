@@ -2398,7 +2398,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   diamondText: {fileID: 273257882}
-  diamondImage: {fileID: 1838890320}
+  diamondImage: {fileID: 1838890322}
   newSprite: {fileID: 21300000, guid: 8cc5d646f3d61e94a9e878c90ea48c4e, type: 3}
 --- !u!4 &275788670 stripped
 Transform:
