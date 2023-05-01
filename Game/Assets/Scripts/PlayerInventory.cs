@@ -12,25 +12,47 @@ public class PlayerInventory : MonoBehaviour
     // Reference to the Pandora Box prefab
     public GameObject pandoraBoxPrefab;
 
-    // Number of diamonds needed to spawn the Pandora Box
+    // The number of diamonds required to spawn a Pandora Box
     public int diamondsNeededForPandoraBox = 5;
 
+    // Flag to track whether a Pandora Box has already been spawned
     private bool hasSpawnedPandoraBox = false;
 
 
+
     // Method called when a diamond is collected
- public void DiamondCollected() {
-   NumberOfDiamonds++;
-   onDiamondCollected.Invoke(this);
+    public void DiamondCollected() 
+    {
+        NumberOfDiamonds++;
 
-   // Check if the player has collected enough diamonds to spawn the Pandora Box
-   if (NumberOfDiamonds >= diamondsNeededForPandoraBox && !hasSpawnedPandoraBox) {
-     // Spawn the Pandora Box randomly in the scene
-     Vector3 spawnPosition = new Vector3(Random.Range(-10f, 30f), 0.5f, Random.Range(-10f, 30f));
-     Instantiate(pandoraBoxPrefab, spawnPosition, Quaternion.identity);
+        // Invoke the onDiamondCollected event and pass this PlayerInventory instance as a parameter
+        onDiamondCollected.Invoke(this);
 
-     // Set the flag to true to indicate that the Pandora Box has been spawned
-     hasSpawnedPandoraBox = true;
-   }
- }
- }
+        // Try to spawn a Pandora Box if enough diamonds have been collected
+        TrySpawnPandoraBox();
+    }
+
+    // Method to attempt spawning a Pandora Box
+    private void TrySpawnPandoraBox() 
+    {
+        // Only spawn a Pandora Box if enough diamonds have been collected and one hasn't already been spawned
+        if (NumberOfDiamonds >= diamondsNeededForPandoraBox && !hasSpawnedPandoraBox) 
+        {
+            // Spawn the Pandora Box at a random position within a certain range
+            SpawnPandoraBox();
+
+            // Set the hasSpawnedPandoraBox flag to true to prevent further spawning
+            hasSpawnedPandoraBox = true;
+        }
+    }
+
+    // Method to spawn a Pandora Box at a random position
+    private void SpawnPandoraBox() 
+    {
+        // Determine a random spawn position within a certain range
+        Vector3 spawnPosition = new Vector3(Random.Range(-10f, 30f), 0.5f, Random.Range(-10f, 30f));
+
+        // Instantiate the Pandora Box prefab at the determined position with no rotation
+        Instantiate(pandoraBoxPrefab, spawnPosition, Quaternion.identity);
+    }
+}

@@ -2397,6 +2397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e7597940f788c49ad896ff01c48fce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  diamondText: {fileID: 273257882}
+  diamondImage: {fileID: 1838890320}
+  newSprite: {fileID: 21300000, guid: 8cc5d646f3d61e94a9e878c90ea48c4e, type: 3}
 --- !u!4 &275788670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8407946972163067645, guid: 92101ed146e7f434cb43a3680c518e75, type: 3}
