@@ -1,20 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCustomController : MonoBehaviour
-{ 
-    public int health = 600; // Initialize health to 600
+{
+    public int maxHealth = 800;
+    public int currentHealth;
     public int damageAmount = 100;
     public Animator animator;
+    public HeartSystemManager heartSystemManager; // Reference to the HeartSystemManager
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+        heartSystemManager.SetHeartVisibility(currentHealth, maxHealth); // Set initial heart visibility
+    }
+
     public void TakeDamage(int damageAmount)
     {
-        // Subtract damage from health here
-        health -= damageAmount;
-        
-        // Check if player is dead
-        if (health <= 0)
+        currentHealth -= damageAmount;
+        heartSystemManager.SetHeartVisibility(currentHealth, maxHealth); // Update heart visibility
+
+        if (currentHealth <= 0)
         {
             Die();
         }
@@ -26,26 +36,21 @@ public class PlayerCustomController : MonoBehaviour
 
     private void Die()
     {
-        Animator animator = GetComponent<Animator>();
-        // Play death animation here
         animator.SetTrigger("die");
         GameState.isGameOver = true;
-       RestartGame restartGame =  FindObjectOfType<RestartGame>();
-       restartGame.EndGame();
-
+        RestartGame restartGame = FindObjectOfType<RestartGame>();
+        restartGame.EndGame();
     } 
-    
+
     private void GetHit()
     {
-        // Play Get Hit Animation
         animator.SetTrigger("damage");
     }
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "EnemyHit")
         {
-            // Inflict damage on the player
             TakeDamage(damageAmount);
         }
     } 
