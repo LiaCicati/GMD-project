@@ -2373,6 +2373,10 @@ PrefabInstance:
       value: Golem (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -5664,9 +5668,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe978884e9103bb42896513df0558374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  golemPrefab: {fileID: 1407557751}
-  numGolems: 0
-  spawnPoints: []
 --- !u!4 &467490566
 Transform:
   m_ObjectHideFlags: 0
@@ -7310,6 +7311,10 @@ PrefabInstance:
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_Name
       value: Golem (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_TagString
@@ -10411,6 +10416,10 @@ PrefabInstance:
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_Name
       value: Golem (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_TagString
@@ -16773,6 +16782,10 @@ PrefabInstance:
       value: Golem (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
@@ -18501,6 +18514,10 @@ PrefabInstance:
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_Name
       value: Golem (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1438169871030806, guid: c9bc790a133e19c40b64d6db4cfb7a22, type: 3}
       propertyPath: m_TagString
@@ -24875,8 +24892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41817e4837695404298f65c632c0476b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 600
   damageAmount: 100
+  animator: {fileID: 3602174664724282203}
 --- !u!54 &7806570755071736735
 Rigidbody:
   m_ObjectHideFlags: 0

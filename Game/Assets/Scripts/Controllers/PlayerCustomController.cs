@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class PlayerCustomController : MonoBehaviour
 { 
-    public int health = 100; // Initialize health to 100
+    public int health = 600; // Initialize health to 600
     public int damageAmount = 100;
+    public Animator animator;
     public void TakeDamage(int damageAmount)
     {
         // Subtract damage from health here
@@ -16,6 +17,10 @@ public class PlayerCustomController : MonoBehaviour
         if (health <= 0)
         {
             Die();
+        }
+        else
+        {
+            GetHit();
         }
     }
 
@@ -29,6 +34,12 @@ public class PlayerCustomController : MonoBehaviour
        restartGame.EndGame();
 
     } 
+    
+    private void GetHit()
+    {
+        // Play Get Hit Animation
+        animator.SetTrigger("damage");
+    }
     
     private void OnTriggerEnter(Collider other)
     {
