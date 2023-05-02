@@ -22450,13 +22450,6 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: CollectBox
-    clip: {fileID: 8300000, guid: 81f7bfdab5fa95f4baed4f5b271c6287, type: 3}
-    mixer: {fileID: 0}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: 7c3fdb9bf0b7c2a4b92567e8650755b3, type: 3}
     mixer: {fileID: 0}
