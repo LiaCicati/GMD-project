@@ -43,8 +43,15 @@ public class Enemy : MonoBehaviour
         enabled = false;
         // Disable the extra collider on the enemy arm
         armCollider.gameObject.SetActive(false);
+        // Delay destruction of the game object
+        StartCoroutine(DestroyAfterDelay(3f)); 
     }
 
+    private IEnumerator DestroyAfterDelay(float delayTime)
+    {
+        yield return new WaitForSeconds(delayTime);
+        Destroy(gameObject);
+    }
     private void GetHit()
     {
         // Play Get Hit Animation
