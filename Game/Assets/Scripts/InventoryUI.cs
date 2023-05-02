@@ -34,7 +34,7 @@ public class InventoryUI : MonoBehaviour
         {
             // Change the diamond image sprite
             diamondImage.GetComponent<Image>().sprite = newSprite;
-            diamondText.text = "0/1";
+            diamondText.text = "Find Box!";
         } 
     }
 }
