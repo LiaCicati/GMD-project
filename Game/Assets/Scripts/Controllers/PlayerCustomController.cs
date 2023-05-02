@@ -53,6 +53,7 @@ public class PlayerCustomController : MonoBehaviour
 
     private void Die()
     {
+        AudioManager.instance.Play("GameOver");
         animator.SetTrigger("die");
         GameState.isGameOver = true;
         RestartGame restartGame = FindObjectOfType<RestartGame>();
