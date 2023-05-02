@@ -22450,6 +22450,13 @@ MonoBehaviour:
     pitch: 0
     loop: 0
     source: {fileID: 0}
+  - name: CollectDiamond
+    clip: {fileID: 8300000, guid: 07a05c7d95c430d4a90e576d2f859f48, type: 3}
+    mixer: {fileID: 0}
+    volume: 0
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &2096676583
 Transform:
   m_ObjectHideFlags: 0

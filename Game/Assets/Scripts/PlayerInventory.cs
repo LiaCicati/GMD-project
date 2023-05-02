@@ -24,6 +24,8 @@ public class PlayerInventory : MonoBehaviour
     public void DiamondCollected() 
     {
         NumberOfDiamonds++;
+        // Play collect diamond audio
+        AudioManager.instance.Play("CollectDiamond");
 
         // Invoke the onDiamondCollected event and pass this PlayerInventory instance as a parameter
         onDiamondCollected.Invoke(this);
