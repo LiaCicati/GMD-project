@@ -10695,7 +10695,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -721, y: 299}
+  m_AnchoredPosition: {x: -716.8, y: 289.3}
   m_SizeDelta: {x: 178, y: 178}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &984509927
@@ -25211,11 +25211,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41817e4837695404298f65c632c0476b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 800
+  maxHealth: 100
   currentHealth: 0
-  damageAmount: 100
+  damageAmount: 25
   animator: {fileID: 3602174664724282203}
   heartSystemManager: {fileID: 234565927}
+  isTakingDamage: 0
 --- !u!54 &7806570755071736735
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,37 +1,54 @@
 using System.Collections;
-using System.Collections.Generic;
-using StarterAssets;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerCustomController : MonoBehaviour
 {
-    public int maxHealth = 800;
-    public int currentHealth;
-    public int damageAmount = 100;
-    public Animator animator;
-    public HeartSystemManager heartSystemManager; // Reference to the HeartSystemManager
-
+    [SerializeField]
+    private int maxHealth = 100;
+    [SerializeField]
+    private int currentHealth;
+    [SerializeField]
+    private int damageAmount = 25;
+    [SerializeField]
+    private Animator animator;
+    [SerializeField]
+    private HeartSystemManager heartSystemManager; // Reference to the HeartSystemManager
+    [SerializeField]
+    private bool isTakingDamage = false;
+    
     void Start()
     {
         currentHealth = maxHealth;
         heartSystemManager.SetHeartVisibility(currentHealth, maxHealth); // Set initial heart visibility
     }
-
+    
     public void TakeDamage(int damageAmount)
     {
-        currentHealth -= damageAmount;
-        heartSystemManager.SetHeartVisibility(currentHealth, maxHealth); // Update heart visibility
+        if (!isTakingDamage) // Check if the player is currently taking damage
+        {
+            isTakingDamage = true; // Set the flag to indicate that the player is taking damage
 
-        if (currentHealth <= 0)
-        {
-            Die();
+            currentHealth -= damageAmount;
+            heartSystemManager.SetHeartVisibility(currentHealth, maxHealth); // Update heart visibility
+
+            if (currentHealth <= 0)
+            {
+                Die();
+            }
+            else
+            {
+                GetHit();
+            }
+
+            // Reset the flag after a short delay to prevent multiple hits in quick succession
+            StartCoroutine(ResetTakingDamageFlag());
         }
-        else
-        {
-            GetHit();
-        }
+    }
+
+    IEnumerator ResetTakingDamageFlag()
+    {
+        yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds
+        isTakingDamage = false; // Reset the flag
     }
 
     private void Die()
