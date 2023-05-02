@@ -5,8 +5,10 @@ public class PandoraBox: MonoBehaviour {
         // Check if the player has collected all the diamonds
         PlayerInventory playerInventory = other.GetComponent <PlayerInventory> ();
         if (playerInventory != null && playerInventory.NumberOfDiamonds >= playerInventory.diamondsNeededForPandoraBox) {
-            // Player has won the game!
+            
             Debug.Log("Congratulations, you found the Pandora Box!");
+            // Play audio for collecting box
+            AudioManager.instance.Play("CollectBox");
 
             // Destroy the Pandora Box
             Destroy(gameObject);
