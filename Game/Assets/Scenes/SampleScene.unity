@@ -22471,6 +22471,13 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: GameWin
+    clip: {fileID: 8300000, guid: aaddad806f264e74b850f7d337d10a67, type: 3}
+    mixer: {fileID: 0}
+    volume: 0.503
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &2096676583
 Transform:
   m_ObjectHideFlags: 0

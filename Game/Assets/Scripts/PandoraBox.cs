@@ -8,7 +8,7 @@ public class PandoraBox: MonoBehaviour {
             
             Debug.Log("Congratulations, you found the Pandora Box!");
             // Play audio for collecting box
-            AudioManager.instance.Play("CollectBox");
+            AudioManager.instance.Play("GameWin");
 
             // Destroy the Pandora Box
             Destroy(gameObject);
