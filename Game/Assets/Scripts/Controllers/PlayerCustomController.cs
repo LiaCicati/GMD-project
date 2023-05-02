@@ -63,6 +63,7 @@ public class PlayerCustomController : MonoBehaviour
     private void GetHit()
     {
         animator.SetTrigger("damage");
+        AudioManager.instance.Play("Damage");
     }
 
     private void OnTriggerEnter(Collider other)
