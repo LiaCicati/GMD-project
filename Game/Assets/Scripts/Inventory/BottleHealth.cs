@@ -16,6 +16,7 @@ public class BottleHealth : MonoBehaviour
                 
                     // Increase player's health
                     playerCustomController.IncreaseHealth(25);
+                    AudioManager.instance.Play("Heal");
                     
                     // Deactivate the bottle potion that was collected
                     gameObject.SetActive(false);

@@ -22129,6 +22129,13 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Heal
+    clip: {fileID: 8300000, guid: 2f50b949187a97c43945c8719f3cba96, type: 3}
+    mixer: {fileID: 0}
+    volume: 0.295
+    pitch: 0.49
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &2096676583
 Transform:
   m_ObjectHideFlags: 0
