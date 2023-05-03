@@ -55,9 +55,9 @@ public class PlayerCustomController : MonoBehaviour
     {
         AudioManager.instance.Play("GameOver");
         animator.SetTrigger("die");
+        
+        // Set the game state to indicate that the game has been lost
         GameState.isGameOver = true;
-        RestartGame restartGame = FindObjectOfType<RestartGame>();
-        restartGame.EndGame();
     } 
 
     private void GetHit()
