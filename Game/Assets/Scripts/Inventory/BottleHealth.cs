@@ -9,15 +9,18 @@ public class BottleHealth : MonoBehaviour
         {
             PlayerCustomController playerCustomController = other.GetComponent<PlayerCustomController>();
             if (playerCustomController != null) {
-                // Call the BottleCollected() method on the PlayerInventory component
-                playerInventory.BottleCollected();
+                // Check if the player's health is less than the maximum health
+                if (playerCustomController.currentHealth < playerCustomController.maxHealth) {
+                    // Call the BottleCollected() method on the PlayerInventory component
+                    playerInventory.BottleCollected();
                 
-                // Increase player's health
-                playerCustomController.IncreaseHealth(25);
+                    // Increase player's health
+                    playerCustomController.IncreaseHealth(25);
+                    
+                    // Deactivate the bottle potion that was collected
+                    gameObject.SetActive(false);
+                }
             }
-            
-            // Deactivate the bottle that was collected
-            gameObject.SetActive(false);
         }
     }
 }

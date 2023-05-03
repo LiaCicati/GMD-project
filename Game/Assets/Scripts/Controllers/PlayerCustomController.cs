@@ -4,9 +4,9 @@ using UnityEngine;
 public class PlayerCustomController : MonoBehaviour
 {
     [SerializeField]
-    private int maxHealth = 100;
+    public int maxHealth = 100;
     [SerializeField]
-    private int currentHealth;
+    public int currentHealth;
     [SerializeField]
     private int damageAmount = 25;
     [SerializeField]
