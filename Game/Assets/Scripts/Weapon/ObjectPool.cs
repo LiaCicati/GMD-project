@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
+// Object pool to manage bullets (pre-instantiate a certain number of bullets and then reuse them as needed)
 public class ObjectPool : MonoBehaviour
 {
     public GameObject pooledObject;
@@ -12,6 +13,8 @@ public class ObjectPool : MonoBehaviour
     private void Start()
     {
         pool = new List<GameObject>(poolSize);
+        
+       // Pre-instantiate the objects in the pool
         for (int i = 0; i < poolSize; i++)
         {
             GameObject obj = Instantiate(pooledObject, transform);
@@ -20,6 +23,7 @@ public class ObjectPool : MonoBehaviour
         }
     }
 
+    // Get an inactive object from the pool
     public GameObject GetObjectFromPool()
     {
         for (int i = 0; i < pool.Count; i++)
@@ -30,6 +34,7 @@ public class ObjectPool : MonoBehaviour
             }
         }
 
+        // If no inactive objects are found in the pool, create a new one
         GameObject obj = Instantiate(pooledObject, transform);
         obj.SetActive(false);
         pool.Add(obj);
