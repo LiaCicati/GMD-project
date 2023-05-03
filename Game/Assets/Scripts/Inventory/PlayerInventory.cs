@@ -18,7 +18,15 @@ public class PlayerInventory : MonoBehaviour
     // Flag to track whether a Pandora Box has already been spawned
     private bool hasSpawnedPandoraBox = false;
 
+// Property to get the number of collected bottles
+    public int NumberOfBottles { get; private set; }
 
+// Method called when a bottle is collected
+    public void BottleCollected() 
+    {
+        NumberOfBottles++;
+      
+    }
 
     // Method called when a diamond is collected
     public void DiamondCollected() 

@@ -73,4 +73,13 @@ public class PlayerCustomController : MonoBehaviour
             TakeDamage(damageAmount);
         }
     } 
+    
+    public void IncreaseHealth(int amount) 
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth) {
+            currentHealth = maxHealth;
+        }
+        heartSystemManager.SetHeartVisibility(currentHealth, maxHealth); // Update heart visibility
+    }
 }
