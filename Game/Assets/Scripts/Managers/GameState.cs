@@ -37,7 +37,7 @@ public class GameState : MonoBehaviour
 
         if (isGameWon)
         {
-            // Load the game over scene
+            // Load the game win scene
             SceneManager.LoadScene("WinGame");
         }
         else

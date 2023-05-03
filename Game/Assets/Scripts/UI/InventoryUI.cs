@@ -21,7 +21,7 @@ public class InventoryUI : MonoBehaviour
         diamondText = GetComponent<TextMeshProUGUI>();
     }
 
-    public void UpdateDiamondText(PlayerInventory playerInventory) 
+    public void UpdateInventoryUI(PlayerInventory playerInventory) 
     {
         // Clamp the number of collected diamonds between 0 and the total number of diamonds needed
         int numCollected = Mathf.Clamp(playerInventory.NumberOfDiamonds, 0, playerInventory.diamondsNeededForPandoraBox);
@@ -33,8 +33,17 @@ public class InventoryUI : MonoBehaviour
         if (numCollected == playerInventory.diamondsNeededForPandoraBox) 
         {
             // Change the diamond image sprite
-            diamondImage.GetComponent<Image>().sprite = newSprite;
+            UpdateImage(newSprite);
+            
+            // Update text
             diamondText.text = "Find Box!";
         } 
     }
+    
+    // Change the diamond image sprite
+    private void UpdateImage(Sprite newSprite)
+    {
+        diamondImage.sprite = newSprite;
+    }
+
 }

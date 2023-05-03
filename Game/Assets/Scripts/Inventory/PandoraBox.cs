@@ -1,6 +1,7 @@
 using UnityEngine;
 
 public class PandoraBox: MonoBehaviour {
+    
     private void OnTriggerEnter(Collider other) {
         // Check if the player has collected all the diamonds
         PlayerInventory playerInventory = other.GetComponent <PlayerInventory> ();

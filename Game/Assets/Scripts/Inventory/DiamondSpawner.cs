@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Class to handle spawn of diamonds
 public class DiamondSpawner : MonoBehaviour
 {
     [SerializeField] private GameObject diamondPrefab;

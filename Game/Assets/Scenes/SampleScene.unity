@@ -24852,7 +24852,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 273257884}
         m_TargetAssemblyTypeName: InventoryUI, Assembly-CSharp
-        m_MethodName: UpdateDiamondText
+        m_MethodName: UpdateInventoryUI
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

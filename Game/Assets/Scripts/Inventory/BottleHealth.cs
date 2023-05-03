@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Class to handle bottle potion
 public class BottleHealth : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
