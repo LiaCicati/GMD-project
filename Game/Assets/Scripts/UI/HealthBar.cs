@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Class setting the health bar for enemy object
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;

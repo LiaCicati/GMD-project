@@ -10,6 +10,8 @@ public class GameOver : MonoBehaviour
     {
         // Set the time scale back to 1
         Time.timeScale = 1; 
+        
+        // Load Game scene
         SceneManager.LoadScene("SampleScene");
     }
     
