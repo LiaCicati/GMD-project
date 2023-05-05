@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -37,7 +38,7 @@ public class Controller : MonoBehaviour {
             miniGame.FoundPotion(); // call public function on MiniGame object
         }
     } 
- 
+    
     void OnMove(InputValue value)
     {
         Vector2 v = value.Get<Vector2>();
@@ -47,6 +48,10 @@ public class Controller : MonoBehaviour {
 
     private void SetLocationText()
     {
+        string[] texts = { "She's in the dark forest", "She's lost in the forest", "She's lost forever!" };
+        int index = Random.Range(0, texts.Length);
+        locationTextObject.GetComponent<TextMeshProUGUI>().text = texts[index];
         locationTextObject.SetActive(true);
-    } 
+    }
+
 }
