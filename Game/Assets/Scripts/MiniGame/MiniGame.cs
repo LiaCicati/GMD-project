@@ -14,12 +14,13 @@ public class MiniGame : MonoBehaviour
     public void FoundPotion()
     {
         backButton.gameObject.SetActive(true); // show button when potion found
-        Time.timeScale = 0f;
+       Time.timeScale = 0f;
 
     }
 
     public void GoToStartMenu()
     {
         SceneManager.LoadScene("StartMenu");
+         Time.timeScale = 1f; // resume the game
     }
 }

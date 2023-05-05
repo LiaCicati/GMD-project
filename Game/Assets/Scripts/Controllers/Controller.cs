@@ -48,7 +48,7 @@ public class Controller : MonoBehaviour {
 
     private void SetLocationText()
     {
-        string[] texts = { "She's in the dark forest", "She's lost in the forest", "She's lost forever!" };
+        string[] texts = { "She's in the dark forest!", "She's in the magician's tower!", "She's in the Enchanted Cave!" };
         int index = Random.Range(0, texts.Length);
         locationTextObject.GetComponent<TextMeshProUGUI>().text = texts[index];
         locationTextObject.SetActive(true);
