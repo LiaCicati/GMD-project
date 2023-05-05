@@ -8,6 +8,7 @@ TagManager:
   - WayPoints
   - Enemy
   - EnemyHit
+  - Potion
   layers:
   - Default
   - TransparentFX

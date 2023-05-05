@@ -21,4 +21,12 @@ public class WinGame : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
+
+    // Start the MiniGame scene
+    public void StartMiniGame()
+    {
+        // Load MiniGame scene
+        Time.timeScale = 1; 
+        SceneManager.LoadScene("MiniGame");
+    }
 }
