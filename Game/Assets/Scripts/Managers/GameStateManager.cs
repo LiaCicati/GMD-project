@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // Manages the game state
-public class GameState : MonoBehaviour
+public class GameStateManager : MonoBehaviour
 {
     // Flag to indicate if the game is over
     public static bool isGameOver;

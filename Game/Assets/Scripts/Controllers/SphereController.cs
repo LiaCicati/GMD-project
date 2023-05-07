@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Controller : MonoBehaviour {
+public class SphereController : MonoBehaviour {
 
     public float speed;
     public GameObject locationTextObject;

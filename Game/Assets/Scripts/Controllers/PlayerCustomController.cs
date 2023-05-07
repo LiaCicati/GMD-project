@@ -57,7 +57,7 @@ public class PlayerCustomController : MonoBehaviour
         animator.SetTrigger("die");
         
         // Set the game state to indicate that the game has been lost
-        GameState.isGameOver = true;
+        GameStateManager.isGameOver = true;
     } 
 
     private void GetHit()
