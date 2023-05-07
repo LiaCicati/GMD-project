@@ -12,7 +12,7 @@ public class Bullet : MonoBehaviour
         {
             Debug.Log("Bullet hit enemy: " + other.name);
             transform.parent = other.transform;
-            other.GetComponent<Enemy>().TakeDamage(damageAmount);
+            other.GetComponent<EnemyController>().TakeDamage(damageAmount);
 
         }
     }

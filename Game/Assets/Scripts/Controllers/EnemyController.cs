@@ -1,12 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System;
-using StarterAssets;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
-public class Enemy : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     // HP = Hit points - amount of damage that an object can sustain before it is destroyed or defeated
     public int HP = 60;
