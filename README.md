@@ -8,7 +8,7 @@ The magician is convinced that the box is hidden somewhere within the forest, an
 As the girl continues to explore deeper into the forest, the golems are everywhere, and they seem to be getting stronger with every moment. With no alternative, she must resist the imminent danger that confronts her.
 
 ## Video:
-[Click me!](https://youtu.be/Tb9IO1-LrO0)
+[Click me!](https://youtu.be/CkFdb7_L7Gc)
 
 ## Resources:
 ### Assets from Unity Asset Store:
